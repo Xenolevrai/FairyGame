@@ -12281,11 +12281,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 7528631186162093565, guid: b2e790bbbce39824aa6f2f1ac973c059, type: 3}
+  - {fileID: 1110331287896900267, guid: b555de664d0fc934eb1dc85da0dde323, type: 3}
+  - {fileID: 7528631186162093565, guid: b2e790bbbce39824aa6f2f1ac973c059, type: 3}
   spawnPoints:
   - {fileID: 962847466}
   - {fileID: 960280553}
   - {fileID: 2086886668}
-  spawnRate: 2
+  spawnRate: 15
 --- !u!4 &277277731
 Transform:
   m_ObjectHideFlags: 0
@@ -17802,7 +17804,7 @@ Transform:
   m_GameObject: {fileID: 960280552}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.07, y: -6.39, z: 0}
+  m_LocalPosition: {x: -0.07, y: -30, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17959,7 +17961,7 @@ Transform:
   m_GameObject: {fileID: 962847465}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.54, y: -3.27, z: 0}
+  m_LocalPosition: {x: -10, y: -22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24644,7 +24646,7 @@ Transform:
   m_GameObject: {fileID: 2086886667}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.53, y: 2.07, z: 0}
+  m_LocalPosition: {x: -0.07, y: -30, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
