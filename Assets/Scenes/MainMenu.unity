@@ -491,6 +491,7 @@ GameObject:
   m_Component:
   - component: {fileID: 93373160}
   - component: {fileID: 93373159}
+  - component: {fileID: 93373161}
   m_Layer: 0
   m_Name: Music
   m_TagString: Untagged
@@ -508,7 +509,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -6425760854301886776, guid: fb78e69d4d363a74085b1e2216ce2982, type: 2}
-  m_audioClip: {fileID: 8300000, guid: d743b4511b0298e47955796c9b8f026d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a97850a8667cad34283f32f30f6f152a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -609,6 +610,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 980035121}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &93373161
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93373158}
+  m_Enabled: 1
 --- !u!1 &122124217
 GameObject:
   m_ObjectHideFlags: 0
@@ -2418,6 +2427,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 63105032}
+  - {fileID: 980035121}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
@@ -3960,7 +3970,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   music_source: {fileID: 93373159}
   sfx_source: {fileID: 490525084}
-  background: {fileID: 8300000, guid: d743b4511b0298e47955796c9b8f026d, type: 3}
+  background: {fileID: 8300000, guid: a97850a8667cad34283f32f30f6f152a, type: 3}
   button_sound: {fileID: 8300000, guid: 2ff796d258a3d8e45ae030036acdf240, type: 3}
 --- !u!4 &980035121
 Transform:
@@ -3970,14 +3980,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980035119}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 283.89517, y: 101.70045, z: 0.44744885}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 282.7889, y: 101.476845, z: 30.447449}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 93373160}
   - {fileID: 490525085}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 519420032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &985461265
 GameObject:
@@ -7683,4 +7693,3 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 1418398488}
-  - {fileID: 980035121}
