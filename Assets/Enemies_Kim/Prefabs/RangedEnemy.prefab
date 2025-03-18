@@ -42,10 +42,10 @@ GameObject:
   - component: {fileID: 417331110611102529}
   - component: {fileID: 323354395091803196}
   - component: {fileID: 429313236372912151}
-  - component: {fileID: 7816212000390679074}
   - component: {fileID: 5515893478150058712}
   - component: {fileID: 2367586648195336058}
   - component: {fileID: 6265110596366184954}
+  - component: {fileID: 4228010868298189645}
   m_Layer: 8
   m_Name: RangedEnemy
   m_TagString: Enemy
@@ -133,26 +133,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08f9bdd9458418e48b433d078b0b32dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  health: 100
---- !u!114 &7816212000390679074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5447905696935966567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7001e1bf8b400814ab85be971068d6e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackType: 1
-  attackDamage: 10
-  attackRange: 5
-  attackCooldown: 2
-  projectilePrefab: {fileID: 9127790656930802774, guid: 4a51739c4b381774f8e44fb7fc1e98cd, type: 3}
-  projectileSpawnPoint: {fileID: 5422056803327345649}
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
 --- !u!114 &5515893478150058712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,8 +148,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15ea7c6e579119a48bdf3732152143fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  health: 100
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  projectilePrefab: {fileID: 0}
+  projectileSpawnPoint: {fileID: 0}
+  attackCooldown: 2
+  rangedSpeed: 1
 --- !u!50 &2367586648195336058
 Rigidbody2D:
   serializedVersion: 4
@@ -239,3 +227,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4, y: 0.6}
   m_EdgeRadius: 0
+--- !u!114 &4228010868298189645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5447905696935966567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  _assetId: 697427441
+  serverOnly: 1
+  visibility: 0
+  hasSpawned: 0

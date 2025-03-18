@@ -1199,7 +1199,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2079731777}
   - component: {fileID: 2079731779}
-  - component: {fileID: 2079731778}
   m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
@@ -1222,14 +1221,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1597076080}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &2079731778
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2079731776}
-  m_Enabled: 1
 --- !u!82 &2079731779
 AudioSource:
   m_ObjectHideFlags: 0

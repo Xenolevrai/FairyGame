@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 6808355667830449674}
   - component: {fileID: 22957979768216415}
   - component: {fileID: 3543312752838276027}
-  - component: {fileID: 8368388483979915666}
   - component: {fileID: 1705762579244749763}
   - component: {fileID: 6729015233260545888}
+  - component: {fileID: 6161188547924638610}
+  - component: {fileID: -6039918406645528376}
+  - component: {fileID: 7195300060576696781}
   m_Layer: 8
   m_Name: FlyingEnemy
   m_TagString: Enemy
@@ -100,26 +102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08f9bdd9458418e48b433d078b0b32dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  health: 100
---- !u!114 &8368388483979915666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1110331287896900267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7001e1bf8b400814ab85be971068d6e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackType: 2
-  attackDamage: 5
-  attackRange: 0.5
-  attackCooldown: 1
-  projectilePrefab: {fileID: 0}
-  projectileSpawnPoint: {fileID: 0}
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
 --- !u!114 &1705762579244749763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,11 +117,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ce4c1093d70bf940a863a30538d607d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  health: 100
-  separationDistance: 1.5
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   hoverStrength: 0.3
-  closeDistance: 0.5
+  attackDamage: 5
+  flyingSpeed: 1.7
 --- !u!95 &6729015233260545888
 Animator:
   serializedVersion: 5
@@ -158,3 +144,92 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6161188547924638610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110331287896900267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  _assetId: 38425378
+  serverOnly: 1
+  visibility: 0
+  hasSpawned: 0
+--- !u!61 &-6039918406645528376
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110331287896900267}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5, y: 0.5}
+    newSize: {x: 13.23, y: 8.9}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5}
+  m_EdgeRadius: 0
+--- !u!50 &7195300060576696781
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110331287896900267}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

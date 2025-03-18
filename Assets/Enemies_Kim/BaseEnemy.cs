@@ -1,41 +1,30 @@
+using Mirror;
 using UnityEngine;
 
-public class BaseEnemy : MonoBehaviour
+public class BaseEnemy : NetworkBehaviour
 {
-    public float speed = 2f;
-    public int health = 100;
+    protected float speed = 0f;
     protected Transform player;
-    protected Rigidbody2D rb;
 
-    public virtual void Start()
+    public override void OnStartServer()
     {
-        rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
     }
 
+    [ServerCallback]
     public virtual void Move()
     {
-        if (player != null && rb != null)
+        if (player != null)
         {
-            Vector2 direction = ((Vector2)player.position - (Vector2)transform.position).normalized;
-            rb.velocity = direction * speed;
+            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
         }
     }
 
-    public void TakeDamage(int damage)
+    void Update()
     {
-        health -= damage;
-        if (health <= 0) Die();
-    }
-
-    public void Die()
-    {
-        Debug.Log(gameObject.name + " died!");
-        Destroy(gameObject);
-    }
-
-    void FixedUpdate()
-    {
-        Move();
+        if (isServer)
+        {
+            Move();
+        }
     }
 }

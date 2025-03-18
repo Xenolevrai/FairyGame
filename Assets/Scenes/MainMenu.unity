@@ -491,7 +491,6 @@ GameObject:
   m_Component:
   - component: {fileID: 93373160}
   - component: {fileID: 93373159}
-  - component: {fileID: 93373161}
   m_Layer: 0
   m_Name: Music
   m_TagString: Untagged
@@ -610,14 +609,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 980035121}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!81 &93373161
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 93373158}
-  m_Enabled: 1
 --- !u!1 &122124217
 GameObject:
   m_ObjectHideFlags: 0
