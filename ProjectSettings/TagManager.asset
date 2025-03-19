@@ -9,11 +9,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - BlockMove
   - Water
   - UI
   - 
-  - 
+  - Player
   - Enemies
   - 
   - 
@@ -41,4 +41,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Floor
+    uniqueID: 3664627671
+    locked: 0
+  - name: Walls
+    uniqueID: 650049151
+    locked: 0
+  - name: Interactables
+    uniqueID: 1368618301
+    locked: 0
+  - name: Character
+    uniqueID: 2810336199
     locked: 0

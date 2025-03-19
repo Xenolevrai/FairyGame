@@ -5,19 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class HealthSystem : NetworkBehaviour
 {
-    [SyncVar(hook = nameof(OnHealthChanged))] // Synchronise la santé et appelle OnHealthChanged lorsqu'elle change
+    [SyncVar(hook = nameof(OnHealthChanged))] 
     public float healthAmount = 100f;
 
     [Header("Health Bar")]
-    [SerializeField] private Image healthBar; // Référence à la barre de vie du joueur
+    [SerializeField] private Image healthBar;
 
     
     void Start()
     {
-        // Seul le client local configure sa propre HealthBar
         if (isLocalPlayer)
         {
-            // Trouve la HealthBar dans le prefab du joueur
             if (healthBar == null)
             {
                 healthBar = GetComponentInChildren<Image>();
@@ -32,14 +30,11 @@ public class HealthSystem : NetworkBehaviour
             }
 
 
-            // Active la HealthBar uniquement pour le joueur local
             healthBar.gameObject.SetActive(true);
-            // Met à jour la barre de vie au démarrage
             UpdateHealthBar();
         }
         else
         {
-            // Désactive la HealthBar pour les autres joueurs
             if (healthBar != null)
             {
                 healthBar.gameObject.SetActive(false);
@@ -47,7 +42,6 @@ public class HealthSystem : NetworkBehaviour
         }
     }
 
-    // Méthode appelée lorsque la santé change
     private void OnHealthChanged(float oldHealth, float newHealth)
     {
         Debug.Log($"Health changed from {oldHealth} to {newHealth}");
@@ -60,7 +54,6 @@ public class HealthSystem : NetworkBehaviour
         }
     }
 
-    // Méthode pour infliger des dommages (appelée par le client, exécutée sur le serveur)
     [Command]
     public void CmdTakeDamage(float damage)
     {
@@ -74,7 +67,6 @@ public class HealthSystem : NetworkBehaviour
         }
     }
 
-    // Méthode publique pour infliger des dommages (appelée par les bots ou les projectiles)
     public void TakeDamage(float damage)
     {
         if (isServer)
@@ -83,7 +75,6 @@ public class HealthSystem : NetworkBehaviour
         }
     }
 
-    // Méthode pour soigner (appelée par le client, exécutée sur le serveur)
     [Command]
     public void CmdHeal(float healAmount)
     {
@@ -91,7 +82,6 @@ public class HealthSystem : NetworkBehaviour
         Debug.Log("Player healed! New health: " + healthAmount);
     }
 
-    // Met à jour la barre de vie
     void UpdateHealthBar()
     {
         if (healthBar != null)
