@@ -167,7 +167,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '[Press E]'
+  m_text: 'Maitre Tutoriel
+
+    [PRESS E]'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -230,7 +232,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 99.563286, y: 24.889902, z: 99.51847, w: 24.789206}
+  m_margin: {x: 99.40518, y: 24.772465, z: 99.375374, w: 24.789206}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -397,9 +399,12 @@ MonoBehaviour:
     maxNormalAngle: 0
   pressE: {fileID: 8716720988752459420}
   dialogues:
-  - Hello
+  - coucou
   - Mais non jure
   - dandiada
+  Mur: {fileID: 0}
+  detruire: 0
+  pouvoirparlerplusieursfois: 1
 --- !u!114 &4524746686069302413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -413,4 +418,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pressE: {fileID: 8716720988752459420}
-  offset: {x: 0, y: 0.7, z: 0}
+  offset: {x: 0, y: 1, z: 0}

@@ -6,6 +6,7 @@ public class MovePlayer : NetworkBehaviour
     public float speed = 3f;
     private Rigidbody2D rb;
     private Vector2 dir;
+    public bool canMove = true; 
 
     void Start()
     {
@@ -18,7 +19,7 @@ public class MovePlayer : NetworkBehaviour
 
     void Update()
     {
-        if (!isLocalPlayer) return;
+        if (!isLocalPlayer || !canMove) return; 
 
         dir.x = Input.GetAxisRaw("Horizontal");
         dir.y = Input.GetAxisRaw("Vertical");
@@ -57,5 +58,14 @@ public class MovePlayer : NetworkBehaviour
         if (rb == null) return;
 
         rb.velocity = newVelocity;
+    }
+
+    public void SetCanMove(bool move)
+    {
+        canMove = move;
+        if (!move)
+        {
+            CmdStop(); 
+        }
     }
 }

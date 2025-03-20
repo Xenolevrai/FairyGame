@@ -27,14 +27,14 @@ public class PNJ : InteractablePNJ
 
         if (Input.GetKey(KeyCode.E))
         {
-            OnInteract();
+            OnInteract(collidedObject);
         }
     }
 
-    protected virtual void OnInteract()
+    protected virtual void OnInteract(GameObject collidedObject)
     {
         Debug.Log("Interact with PNJ");
-        pnj.ouver();
+        pnj.ouver(collidedObject);
 
     }
 

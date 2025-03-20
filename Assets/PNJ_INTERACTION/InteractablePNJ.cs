@@ -10,13 +10,22 @@ public class InteractablePNJ : MonoBehaviour
     public GameObject pressE;
     public List<string> dialogues = new List<string> { "Hello" };
     private UIDialogue uiDialogue;
-
+    public GameObject Mur;
+    private MovePlayer playerMovement;
+    
+    public bool detruire = false;
+    public bool pouvoirparlerplusieursfois = false;
+    private bool dejaparle = false;
     protected virtual void Start()
     {
         z_Collider = GetComponent<Collider2D>();
         if (pressE != null)
         {
             pressE.SetActive(false);
+        }
+        if (Mur != null)
+        {
+            Mur.SetActive(true);
         }
     }
 
@@ -44,13 +53,13 @@ public class InteractablePNJ : MonoBehaviour
         if (pressE != null)
         {
             pressE.SetActive(true);
-            Debug.Log("est-ce-que c'est activé ?");
+            Debug.Log("est-ce-que c'est activÃ© ?");
         }
 
         Debug.Log("frrrr t'abuses ?");
         if (Input.GetKeyDown(KeyCode.E))
         {
-            ouver();
+            ouver(collidedObject); 
         }
     }
 
@@ -62,14 +71,69 @@ public class InteractablePNJ : MonoBehaviour
         }
     }
 
-    public void ouver()
+    public void ouver(GameObject collidedObject)
     {
-        Debug.Log("ça marche pour le pnj");
-
-        if (uiDialogue != null)
+        Debug.Log("Ã§a marche pour le pnj");
+        if (pouvoirparlerplusieursfois)
         {
-            Debug.Log("oeoeoeoeoeoeo");
-            uiDialogue.SetDialogues(dialogues); 
+            playerMovement = collidedObject.GetComponent<MovePlayer>();
+            if (playerMovement != null)
+            {   
+                playerMovement.SetCanMove(false); 
+            }
+
+            if (uiDialogue != null)
+            {
+                Debug.Log("oeoeoeoeoeoeo");
+                uiDialogue.SetDialogues(dialogues, () =>
+                {
+                    supprimemur();
+                });
+            }
+            dejaparle = true;
+        }
+        else 
+        {
+            if(dejaparle)
+            {
+
+            }
+            else
+            {
+                playerMovement = collidedObject.GetComponent<MovePlayer>();
+                if (playerMovement != null)
+                {   
+                    playerMovement.SetCanMove(false); 
+                }
+
+                if (uiDialogue != null)
+                {
+                    Debug.Log("oeoeoeoeoeoeo");
+                    uiDialogue.SetDialogues(dialogues, () =>
+                    {
+                        supprimemur();
+                    });
+                }
+                dejaparle = true;
+            }
+        }
+    }
+
+    public void supprimemur()
+    {
+        if (Mur != null)
+        {
+            Mur.SetActive(false);
+        }
+
+        if (playerMovement != null)
+        {
+            playerMovement.SetCanMove(true); 
+        }
+
+        if (detruire)
+        {
+            gameObject.SetActive(false); 
         }
     }
 }

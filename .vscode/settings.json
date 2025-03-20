@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "fairywood.sln"
+    "dotnet.defaultSolution": "FairyGame.sln"
 }
