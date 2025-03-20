@@ -4,6 +4,12 @@ using UnityEngine;
 public class PlayerInteraction : MonoBehaviour
 {
     private List<CollectibleItem> nearbyItems = new List<CollectibleItem>();
+    private UIDialogue uiDialogue; 
+
+    private void Start()
+    {
+        uiDialogue = FindObjectOfType<UIDialogue>(); 
+    }
 
     private void Update()
     {
@@ -12,6 +18,14 @@ public class PlayerInteraction : MonoBehaviour
         {
             Debug.Log("E appuyé");
             TryCollectItem();
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (uiDialogue.IsDialogueActive())
+            {
+                uiDialogue.NextDialogue();
+            }
         }
     }
 
@@ -33,7 +47,7 @@ public class PlayerInteraction : MonoBehaviour
             nearbyItems.Add(item);
             item.ShowPressE();
             Debug.Log("Objet à proximité : " + other.name);
-        }
+        }        
     }
 
     private void OnTriggerExit2D(Collider2D other)
