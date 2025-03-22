@@ -3,33 +3,52 @@ using UnityEngine;
 
 public class EnemySpawner : NetworkBehaviour
 {
-    [System.Serializable]
-    public struct SpawnPointData
-    {
-        public Transform spawnPoint; 
-        public GameObject enemyPrefab; 
-    }
+    [Header("Spawner Settings")]
+    public GameObject meleeEnemyPrefab;
+    public float spawnRate = 5f;
+    public float activationRange = 10f;
 
-    public SpawnPointData[] spawnPoints; 
-    public float spawnRate = 10f; 
+    private Transform player;
 
     public override void OnStartServer()
     {
-        InvokeRepeating(nameof(SpawnEnemy), 1f, spawnRate);
+        // Delay slightly to give the player time to spawn
+        InvokeRepeating(nameof(FindPlayerAndStartSpawning), 1f, 1f);
     }
 
-    [Server]
-    void SpawnEnemy()
+    void FindPlayerAndStartSpawning()
     {
-        if (spawnPoints.Length == 0) return;
-
-        foreach (SpawnPointData spawnData in spawnPoints)
+        if (player == null)
         {
-            if (spawnData.spawnPoint != null && spawnData.enemyPrefab != null)
+            GameObject foundPlayer = GameObject.FindGameObjectWithTag("Player");
+            if (foundPlayer != null)
             {
-                GameObject enemy = Instantiate(spawnData.enemyPrefab, spawnData.spawnPoint.position, Quaternion.identity);
-                NetworkServer.Spawn(enemy); 
+                player = foundPlayer.transform;
+                InvokeRepeating(nameof(SpawnMeleeEnemyIfNearby), 1f, spawnRate);
+                CancelInvoke(nameof(FindPlayerAndStartSpawning));
             }
         }
     }
+
+    [Server]
+    void SpawnMeleeEnemyIfNearby()
+    {
+        if (player == null || meleeEnemyPrefab == null) return;
+
+        float distance = Vector2.Distance(transform.position, player.position);
+        if (distance <= activationRange)
+        {
+            GameObject enemy = Instantiate(meleeEnemyPrefab, transform.position, Quaternion.identity);
+            NetworkServer.Spawn(enemy);
+            Debug.Log("Spawned MeleeEnemy!");
+        }
+    }
+
+#if UNITY_EDITOR
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, activationRange);
+    }
+#endif
 }

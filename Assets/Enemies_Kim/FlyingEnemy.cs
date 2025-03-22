@@ -5,6 +5,8 @@ public class FlyingEnemy : BaseEnemy
 {
     public float hoverStrength = 0.3f;
     public float attackDamage = 5f;
+    public float attackCooldown = 1.5f;
+    private float lastAttackTime = 0f;
     [SerializeField] private float flyingSpeed = 3f;
 
 
@@ -25,12 +27,16 @@ public class FlyingEnemy : BaseEnemy
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (isServer && collision.CompareTag("Player"))
         {
-            collision.GetComponent<HealthSystem>()?.CmdTakeDamage(attackDamage);
-            Debug.Log(gameObject.name + " attacked the player!");
+            if (Time.time >= lastAttackTime + attackCooldown)
+            {
+                collision.GetComponent<HealthSystem>()?.CmdTakeDamage(attackDamage);
+                Debug.Log(gameObject.name + " is hovering and attacking!");
+                lastAttackTime = Time.time;
+            }
         }
     }
 }

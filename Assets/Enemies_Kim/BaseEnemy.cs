@@ -1,30 +1,41 @@
 using Mirror;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class BaseEnemy : NetworkBehaviour
 {
-    protected float speed = 0f;
+    [SerializeField] protected float speed = 2f;
     protected Transform player;
+    protected Rigidbody2D rb;
 
     public override void OnStartServer()
     {
+        base.OnStartServer();
+        rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
     }
 
     [ServerCallback]
     public virtual void Move()
     {
-        if (player != null)
+        if (player != null && rb != null)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            Vector2 direction = ((Vector2)player.position - rb.position).normalized;
+            rb.velocity = direction * speed;
         }
     }
 
-    void Update()
+    [ServerCallback]
+    void FixedUpdate()
     {
-        if (isServer)
-        {
-            Move();
-        }
+        if (!isServer) return;
+        Move();
+    }
+
+    [ServerCallback]
+    void OnDisable()
+    {
+        if (rb != null)
+            rb.velocity = Vector2.zero;
     }
 }

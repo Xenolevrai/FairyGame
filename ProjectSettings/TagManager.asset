@@ -13,7 +13,7 @@ TagManager:
   - BlockMove
   - Water
   - UI
-  - 
+  - Wall
   - Player
   - Enemies
   - 
