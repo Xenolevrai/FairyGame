@@ -11,6 +11,7 @@ public class PlayerQuest : MonoBehaviour
     
     private string IntituleQuete;
     private Dictionary<string, int> touteslesquetes = new Dictionary<string, int>(); 
+    private List<int> nombreavoir = new List<int>();
     private InteractablePNJ lepnj;
 
     [SerializeField] private GameObject quetePanel; 
@@ -36,9 +37,10 @@ public class PlayerQuest : MonoBehaviour
         lepnj = pnj;
     }
 
-    public void lamission(string mission)
+    public void lamission(string mission, int nombre)
     {
         IntituleQuete = mission;
+        nombreavoir.Add(nombre);
     }
 
     public void Accepter()
@@ -74,22 +76,38 @@ public class PlayerQuest : MonoBehaviour
     }
 
     public void Montrellesquetes()
+{
+    foreach (Transform child in quetePanel.transform)
     {
-        foreach (Transform child in quetePanel.transform)
-        {
-            Destroy(child.gameObject);
-        }
+        Destroy(child.gameObject);
+    }
+    int i = 0;
+    foreach (var quete in touteslesquetes)
+    {
+        GameObject queteEntry = Instantiate(queteEntryPrefab, quetePanel.transform);
+        TextMeshProUGUI[] textes = queteEntry.GetComponentsInChildren<TextMeshProUGUI>();
 
-        foreach (var quete in touteslesquetes)
+        if (textes.Length >= 2)
         {
-            GameObject queteEntry = Instantiate(queteEntryPrefab, quetePanel.transform);
-            TextMeshProUGUI queteText = queteEntry.GetComponentInChildren<TextMeshProUGUI>();
-            queteText.text = $"{quete.Key} : {quete.Value}/4"; 
-        }
+            textes[0].text = quete.Key;
+            textes[0].fontSize = 70; 
+            textes[0].color = Color.black; 
 
-        quetePanel.SetActive(true);
+            RectTransform intituleRect = textes[0].GetComponent<RectTransform>();
+            intituleRect.sizeDelta = new Vector2(1650, intituleRect.sizeDelta.y); 
+
+            textes[1].text = $"{quete.Value}/{nombreavoir[i]}";
+            textes[1].fontSize = 70; 
+            textes[1].color = Color.black; 
+
+            RectTransform progressionRect = textes[1].GetComponent<RectTransform>();
+            progressionRect.sizeDelta = new Vector2(300, progressionRect.sizeDelta.y); 
+            i++;
+        }
     }
 
+    quetePanel.SetActive(true);
+}
     public void CacherLesQuetes()
 {
     if (quetePanel != null)
@@ -102,6 +120,6 @@ public void OnPieceRecuperee()
 {
     int nombreprogression = touteslesquetes["Récupérer 4 pièces"];
     UpdateProgression("Récupérer 4 pièces", nombreprogression+1); 
-    Montrellesquetes(); 
 }
+
 }

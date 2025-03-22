@@ -203,6 +203,5 @@ public class UIDialogue : MonoBehaviour
         return canvas.enabled;
     }
     
-
     
 }

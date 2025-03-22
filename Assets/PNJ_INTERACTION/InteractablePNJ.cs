@@ -80,7 +80,7 @@ public class InteractablePNJ : MonoBehaviour
     {
         lejoueur = player;
         player.SetInteractablePNJ(this);
-        player.lamission(Lamissiondonne);
+        player.lamission(Lamissiondonne, quetenombre);
     }
     protected virtual void OnNotCollided()
     {
