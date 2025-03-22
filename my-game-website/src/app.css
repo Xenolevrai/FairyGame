@@ -1,0 +1,53 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* General Body Styles */
+body {
+    background: url('/bg.jpg') repeat; /* Background image for the site */
+    background-size: contain; /* Ensure the pattern scales proportionally */
+    background-size: 47%;
+    font-family: 'MedievalSharp', serif; /* Medieval-themed font */
+    color: #ffffff; /* White text for contrast */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default paddings */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100%; /* Full viewport width */
+    box-sizing: border-box; /* Include padding/border in size */
+}
+
+/* Anchor Tag Styles */
+a {
+    text-decoration: none; /* Remove default underline */
+    color: inherit; /* Inherit text color */
+}
+
+a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Image Styles */
+img {
+    max-width: 100%; /* Ensure images do not overflow */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Features Grid and Roadmap */
+.features-grid,
+.roadmap {
+    max-width: 100%;
+    overflow: hidden; /* Prevent overflow */
+    margin: 0 auto; /* Center the grid */
+}
+
+/* Custom Box Styles */
+.custom-box {
+    width: 300px; /* Consistent width */
+    height: 200px; /* Consistent height */
+    margin: 0 auto; /* Center the box */
+    background-size: cover; /* Fully cover the box */
+    background-repeat: no-repeat; /* Prevent tiling */
+    background-position: center; /* Center the image */
+    box-sizing: border-box; /* Include padding/border in size */
+}
+
