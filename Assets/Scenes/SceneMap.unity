@@ -12284,6 +12284,62 @@ PrefabInstance:
       propertyPath: Mur
       value: 
       objectReference: {fileID: 1919601964}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: Personnage
+      value: Maitre Tutoriel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: quetenombre
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: PNJpourquete
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: Lamissiondonne
+      value: "R\xE9cup\xE9rer 4 pi\xE8ces d'ors"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: dialogues.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: dialogues.Array.data[0]
+      value: "Bienvenue dans la caverne de tutoriel, gr\xE2ce \xE0 cette entrainement
+        fructueux tu vas pouvoir apprendre les bases, cela ne te suffira surement
+        pas \xE0 terminer le jeu alors accroche toi bien."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: dialogues.Array.data[1]
+      value: "Pour commencer, il faut savoir que tu peux utiliser la touche z pour
+        avancer, la touche s pour reculer, la touche d pour aller \xE0 droite et
+        la touche q pour aller \xE0 gauche. Les fl\xE8ches te permettent aussi de
+        te d\xE9placer. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: dialogues.Array.data[2]
+      value: "Comme tu as pu le voir tu ne peux pas encore bouger, sache que lorsque
+        tu parles \xE0 un pnj cela est fait pour que tu ne puisses pas bouger."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: dialogues.Array.data[3]
+      value: "Sache aussi que la touche E te permettra d'interagir avec tous, une
+        petite indication \"Press E\" sera toujours pr\xE9sente lorsque c'est le
+        cas."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: dialogues.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: dialogues.Array.data[7]
+      value: "Acceptes-tu la qu\xEAtes ?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: pouvoirparlerplusieursfois
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9124615894131148530, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
       propertyPath: m_Name
       value: NPC
@@ -18480,6 +18536,14 @@ PrefabInstance:
       propertyPath: detruire
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: Personnage
+      value: Maitre Tutoriel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: pouvoirparlerplusieursfois
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9124615894131148530, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
       propertyPath: m_Name
       value: NPC (3)
@@ -20302,6 +20366,123 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1163942685
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4417250102180086351, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417250102180086351, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417250102180086351, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417250102180086351, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417250102180086351, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417250102180086351, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417250102180086351, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417250102180086351, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417250102180086351, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417250102180086351, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: Mur
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: Personnage
+      value: Maitre Tutoriel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: quetenombre
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: PNJpourquete
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: Lamissiondonne
+      value: "R\xE9cup\xE9rer 4 de bois"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: dialogues.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: dialogues.Array.data[0]
+      value: "Bienvenue dans la caverne de tutoriel, gr\xE2ce \xE0 cette entrainement
+        fructueux tu vas pouvoir apprendre les bases, cela ne te suffira surement
+        pas \xE0 terminer le jeu alors accroche toi bien."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: dialogues.Array.data[1]
+      value: "Pour commencer, il faut savoir que tu peux utiliser la touche z pour
+        avancer, la touche s pour reculer, la touche d pour aller \xE0 droite et
+        la touche q pour aller \xE0 gauche. Les fl\xE8ches te permettent aussi de
+        te d\xE9placer. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: dialogues.Array.data[2]
+      value: "Comme tu as pu le voir tu ne peux pas encore bouger, sache que lorsque
+        tu parles \xE0 un pnj cela est fait pour que tu ne puisses pas bouger."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: dialogues.Array.data[3]
+      value: "Sache aussi que la touche E te permettra d'interagir avec tous, une
+        petite indication \"Press E\" sera toujours pr\xE9sente lorsque c'est le
+        cas."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: dialogues.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: dialogues.Array.data[7]
+      value: "Acceptes-tu la qu\xEAtes ?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: pouvoirparlerplusieursfois
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9124615894131148530, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: m_Name
+      value: NPC (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
 --- !u!1 &1179185922
 GameObject:
   m_ObjectHideFlags: 0
@@ -23996,6 +24177,14 @@ PrefabInstance:
       propertyPath: detruire
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: Personnage
+      value: Maitre Tutoriel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: pouvoirparlerplusieursfois
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9124615894131148530, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
       propertyPath: m_Name
       value: NPC (4)
@@ -25425,6 +25614,14 @@ PrefabInstance:
       propertyPath: Mur
       value: 
       objectReference: {fileID: 915046049}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: Personnage
+      value: Maitre Tutoriel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: pouvoirparlerplusieursfois
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9124615894131148530, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
       propertyPath: m_Name
       value: NPC (2)
@@ -34996,6 +35193,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
+      propertyPath: Personnage
+      value: Maitre Tutoriel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4865021620426595464, guid: 1dc0c5733cca5b14080e01285831c9a1, type: 3}
       propertyPath: pouvoirparlerplusieursfois
       value: 0
       objectReference: {fileID: 0}
@@ -35028,6 +35229,7 @@ SceneRoots:
   - {fileID: 2028493939}
   - {fileID: 720273498}
   - {fileID: 217219280}
+  - {fileID: 1163942685}
   - {fileID: 1570857002802804980}
   - {fileID: 2013555332}
   - {fileID: 923628965}

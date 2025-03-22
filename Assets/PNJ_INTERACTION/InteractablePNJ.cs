@@ -4,18 +4,30 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class InteractablePNJ : MonoBehaviour
 {
+    public bool questaccepte = false;
+    public bool finiquest = false;
     private Collider2D z_Collider;
     [SerializeField] private ContactFilter2D z_Filter;
     private List<Collider2D> z_CollidedObjects = new List<Collider2D>(1);
     public GameObject pressE;
     public List<string> dialogues = new List<string> { "Hello" };
     private UIDialogue uiDialogue;
+    private PlayerQuest lejoueur;
     public GameObject Mur;
     private MovePlayer playerMovement;
     
     public bool detruire = false;
     public bool pouvoirparlerplusieursfois = false;
     private bool dejaparle = false;
+    public bool PNJpourquete = false;
+    public string Personnage;
+
+    public string Lamissiondonne;
+    public int quetenombre;
+  
+    
+
+
     protected virtual void Start()
     {
         z_Collider = GetComponent<Collider2D>();
@@ -27,6 +39,7 @@ public class InteractablePNJ : MonoBehaviour
         {
             Mur.SetActive(true);
         }
+
     }
 
     protected virtual void Update()
@@ -63,6 +76,12 @@ public class InteractablePNJ : MonoBehaviour
         }
     }
 
+    public void SetInteractablePlayer(PlayerQuest player)
+    {
+        lejoueur = player;
+        player.SetInteractablePNJ(this);
+        player.lamission(Lamissiondonne);
+    }
     protected virtual void OnNotCollided()
     {
         if (pressE != null)
@@ -72,9 +91,25 @@ public class InteractablePNJ : MonoBehaviour
     }
 
     public void ouver(GameObject collidedObject)
+{
+    Debug.Log("ça marche pour le pnj");
+    if (pouvoirparlerplusieursfois)
     {
-        Debug.Log("ça marche pour le pnj");
-        if (pouvoirparlerplusieursfois)
+        if (PNJpourquete)
+        {
+            playerMovement = collidedObject.GetComponent<MovePlayer>();
+            if (playerMovement != null)
+            {   
+                playerMovement.SetCanMove(false); 
+            }
+            if (uiDialogue != null)
+            {
+                uiDialogue.SetInteractablePNJQuete(this); 
+                uiDialogue.Quest(dialogues, Personnage);
+            }
+            dejaparle = true;
+        }
+        else
         {
             playerMovement = collidedObject.GetComponent<MovePlayer>();
             if (playerMovement != null)
@@ -85,6 +120,8 @@ public class InteractablePNJ : MonoBehaviour
             if (uiDialogue != null)
             {
                 Debug.Log("oeoeoeoeoeoeo");
+                uiDialogue.SetInteractablePNJ(this);
+                uiDialogue.SetDialoguesPerso(Personnage);
                 uiDialogue.SetDialogues(dialogues, () =>
                 {
                     supprimemur();
@@ -92,32 +129,51 @@ public class InteractablePNJ : MonoBehaviour
             }
             dejaparle = true;
         }
-        else 
+    }
+    else 
+    {
+        if (dejaparle)
         {
-            if(dejaparle)
-            {
-
+        }
+        else
+        {
+             if (PNJpourquete)
+        {
+            playerMovement = collidedObject.GetComponent<MovePlayer>();
+            if (playerMovement != null)
+            {   
+                playerMovement.SetCanMove(false); 
             }
-            else
+            if (uiDialogue != null)
             {
-                playerMovement = collidedObject.GetComponent<MovePlayer>();
-                if (playerMovement != null)
-                {   
-                    playerMovement.SetCanMove(false); 
-                }
+                uiDialogue.SetInteractablePNJQuete(this); 
+                uiDialogue.Quest(dialogues, Personnage);
+            }
+            dejaparle = true;
+        }
+        else
+        {
+            playerMovement = collidedObject.GetComponent<MovePlayer>();
+            if (playerMovement != null)
+            {   
+                playerMovement.SetCanMove(false); 
+            }
 
-                if (uiDialogue != null)
+            if (uiDialogue != null)
+            {
+                Debug.Log("oeoeoeoeoeoeo");
+                uiDialogue.SetInteractablePNJ(this);
+                uiDialogue.SetDialoguesPerso(Personnage);
+                uiDialogue.SetDialogues(dialogues, () =>
                 {
-                    Debug.Log("oeoeoeoeoeoeo");
-                    uiDialogue.SetDialogues(dialogues, () =>
-                    {
-                        supprimemur();
-                    });
-                }
-                dejaparle = true;
+                    supprimemur();
+                });
             }
+            dejaparle = true;
+        }
         }
     }
+}
 
     public void supprimemur()
     {

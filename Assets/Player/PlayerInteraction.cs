@@ -16,17 +16,11 @@ public class PlayerInteraction : MonoBehaviour
         Debug.Log("dit frr");
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("E appuyé");
+            Debug.Log("E appuyï¿½");
             TryCollectItem();
         }
 
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            if (uiDialogue.IsDialogueActive())
-            {
-                uiDialogue.NextDialogue();
-            }
-        }
+        
     }
 
     private void TryCollectItem()
@@ -46,7 +40,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             nearbyItems.Add(item);
             item.ShowPressE();
-            Debug.Log("Objet à proximité : " + other.name);
+            Debug.Log("Objet ï¿½ proximitï¿½ : " + other.name);
         }        
     }
 
@@ -57,7 +51,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             nearbyItems.Remove(item);
             item.HidePressE();
-            Debug.Log("Objet hors de portée : " + other.name);
+            Debug.Log("Objet hors de portï¿½e : " + other.name);
         }
     }
 }
